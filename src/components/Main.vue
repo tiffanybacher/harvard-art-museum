@@ -5,16 +5,14 @@
 </template>
 
 <script>
+import fetchArt from '../api/fetchArt.js';
+
 export default {
   name: 'Main',
-  created: async function() {
+  created: function() {
     console.log('testing');
-
-    const url = `https://api.harvardartmuseums.org/image?apikey=${process.env.API_KEY}`;
-
-    await fetch(url)
-      .then(response => response.json())
-      .then(result => console.log(result))
+    
+    fetchArt();
   }
 };
 </script>
