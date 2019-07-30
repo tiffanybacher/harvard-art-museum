@@ -14,8 +14,7 @@ const fetchArt = async () => {
   const result = await response.json();
   
   const cleanedArt = cleanArt(result.records);
-  
-  console.log(cleanedArt)
+
   return cleanedArt;
 };
 
