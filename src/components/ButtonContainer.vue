@@ -1,6 +1,7 @@
 <template>
   <section class="button-container">
     <button @click="loadMore">LOAD MORE</button>
+    <button @click="goToTop">BACK TO TOP</button>
   </section>
 </template>
 
@@ -16,6 +17,9 @@ export default {
       const nextPage = this.currentPage + 1;
       this.fetchNextPage(nextPage);
     },
+    goToTop() {
+      window.scrollTo(0,0);
+    },
   },
 };
 </script>
@@ -23,7 +27,7 @@ export default {
 <style lang="scss">
 .button-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   width: 100%;
 
   button {
@@ -32,6 +36,7 @@ export default {
     border: 4px solid black;
     font-weight: 800;
     font-size: 1.1em;
+    margin: 10px auto;
     padding: 12px;
     width: 60%;
 
