@@ -1,6 +1,6 @@
 <template>
   <section class="button-container">
-    <button @click="loadMore">LOAD MORE</button>
+    <button v-if="!galleryShown" @click="loadMore">LOAD MORE</button>
     <button @click="goToTop">BACK TO TOP</button>
   </section>
 </template>
@@ -11,6 +11,7 @@ export default {
   props: {
     currentPage: Number,
     fetchNextPage: Function,
+    galleryShown: Boolean
   },
   methods: {
     loadMore() {

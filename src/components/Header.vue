@@ -14,7 +14,7 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 2%;
+  padding: 10px 2%;
 
   img {
     height: 150px;
