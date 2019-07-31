@@ -1,12 +1,14 @@
 <template>
   <main class="main">
-      <Thumbnail v-for="art in displayedArt" :art="art" :key="art.id" />
+    <Thumbnail v-for="art in displayedArt" :art="art" :key="art.id" />
+    <ButtonContainer />
   </main>
 </template>
 
 <script>
 import fetchArt from '../api/fetchArt';
 import Thumbnail from './Thumbnail.vue';
+import ButtonContainer from './ButtonContainer.vue';
 
 export default {
   name: 'Main',
@@ -20,6 +22,7 @@ export default {
   },
   components: {
     Thumbnail,
+    ButtonContainer,
   },
 };
 </script>

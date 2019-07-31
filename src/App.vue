@@ -27,5 +27,10 @@ export default {
   margin: 0;
   padding: 0;
   text-align: center;
+
+  a:hover,
+  button:hover {
+    cursor: pointer;
+  }
 }
 </style>
