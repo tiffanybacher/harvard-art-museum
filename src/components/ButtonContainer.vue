@@ -1,7 +1,6 @@
 <template>
   <section class="button-container">
-    <button @click="goBack">BACK</button>
-    <button @click="goToNext">NEXT</button>
+    <button @click="loadMore">LOAD MORE</button>
   </section>
 </template>
 
@@ -10,13 +9,12 @@ export default {
   name: 'ButtonContainer',
   props: {
     currentPage: Number,
+    fetchNextPage: Function,
   },
   methods: {
-    goToNext() {
-
-    },
-    goBack() {
-
+    loadMore() {
+      const nextPage = this.currentPage + 1;
+      this.fetchNextPage(nextPage);
     },
   },
 };
@@ -33,8 +31,9 @@ export default {
     background: #000000;
     border: 4px solid black;
     font-weight: 800;
-    font-size: 1.25em;
-    padding: 15px 20px;
+    font-size: 1.1em;
+    padding: 12px;
+    width: 60%;
 
     &:hover {
       color: #000000;

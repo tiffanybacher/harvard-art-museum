@@ -1,7 +1,9 @@
 <template>
   <main class="main">
     <Thumbnail v-for="art in displayedArt" :art="art" :key="art.id" />
-    <ButtonContainer :currentPage="currentPage" />
+    <ButtonContainer 
+      :currentPage="currentPage"
+      :fetchNextPage="fetchNextPage" />
   </main>
 </template>
 
@@ -13,17 +15,20 @@ import ButtonContainer from './ButtonContainer.vue';
 export default {
   name: 'Main',
   created() {
-    this.fetchArtByPage();
+    this.fetchNextPage(1);
   },
   data() {
     return {
-      displayedArt: {},
-      currentPage: 1,
+      displayedArt: [],
+      currentPage: 0,
     };
   },
   methods: {
-    async fetchArtByPage() {
-      this.displayedArt = await fetchArt();
+    async fetchNextPage(page) {
+      const fetchedArt = await fetchArt(page);
+
+      this.displayedArt = [...this.displayedArt, ...fetchedArt];
+      this.currentPage = this.currentPage + 1;
     },
   },
   components: {
