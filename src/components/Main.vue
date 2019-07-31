@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <Thumbnail v-for="art in displayedArt" :art="art" :key="art.id" />
-    <ButtonContainer />
+    <ButtonContainer :currentPage="currentPage" />
   </main>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       displayedArt: {},
+      currentPage: 1,
     };
   },
   components: {
