@@ -4,7 +4,7 @@ const cleanArt = records => records
 const fetchArt = async () => {
   const apiKey = 'b1e4fe60-b2da-11e9-b220-f1e4c3bbf900';
   // const apiKey = process.env.VUE_APP_API_KEY;
-  const url = `https://api.harvardartmuseums.org/image?apikey=${apiKey}`;
+  const url = `https://api.harvardartmuseums.org/image?size=12&apikey=${apiKey}`;
 
   const response = await fetch(url);
 

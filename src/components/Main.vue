@@ -1,11 +1,6 @@
 <template>
   <main class="main">
-   <!--  <img
-      v-for="art in displayedArt"
-      :key="art.id"
-      :src="art.imageurl"
-    /> -->
-    <Thumbnail v-for="art in displayedArt" :art="art" :key="art.id" />
+      <Thumbnail v-for="art in displayedArt" :art="art" :key="art.id" />
   </main>
 </template>
 
@@ -33,7 +28,7 @@ export default {
 .main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   padding: 2%;
 }
 

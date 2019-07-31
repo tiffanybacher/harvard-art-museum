@@ -17,6 +17,7 @@ export default {
 
 <style lang="scss">
 .thumbnail {
+  margin: 15px;
   img {
     border: 4px solid black;
     height: 400px;
