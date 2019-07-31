@@ -12,14 +12,19 @@ import ButtonContainer from './ButtonContainer.vue';
 
 export default {
   name: 'Main',
-  async created() {
-    this.displayedArt = await fetchArt();
+  created() {
+    this.fetchArtByPage();
   },
   data() {
     return {
       displayedArt: {},
       currentPage: 1,
     };
+  },
+  methods: {
+    async fetchArtByPage() {
+      this.displayedArt = await fetchArt();
+    },
   },
   components: {
     Thumbnail,

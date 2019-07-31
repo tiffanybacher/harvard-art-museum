@@ -9,11 +9,11 @@
 export default {
   name: 'ButtonContainer',
   props: {
-    currentPage: Number
+    currentPage: Number,
   },
   methods: {
     goToNext() {
-      console.log(this.currentPage)
+
     },
     goBack() {
 
