@@ -1,7 +1,7 @@
 <template>
   <main class="main">
-    <p @click="showGalleryMenu">Sort by gallery <i :class="caratDirection"></i></p>
-    <p @click="backToAll" v-if="galleryShown">Go Back to All</p>
+    <p @click="showGalleryMenu" class="gallery-nav">Sort by gallery <i :class="caratDirection"></i></p>
+    <p @click="backToAll" v-if="galleryShown" class="gallery-nav">Go Back to All</p>
     <div v-if="menuShown" class="gallery-menu">
       <div>
         <h3>Floor 1</h3>
@@ -113,6 +113,10 @@ export default {
 </script>
 
 <style lang="scss">
+.gallery-nav {
+  cursor: pointer;
+}
+
 .gallery-menu {
   display: flex;
   justify-content: center;
